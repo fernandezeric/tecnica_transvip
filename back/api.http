@@ -1,0 +1,64 @@
+### Ping test
+GET http://localhost:3000/ping
+Origin: http://localhost:3000
+
+### All Restaurants
+GET http://localhost:3000/restaurants/
+Origin: http://localhost:3000
+
+### Get one restaurant by :id
+GET http://localhost:3000/restaurants/c4be1c66-e622-11ee-b8d1-4cebbd0150a9
+Origin: http://localhost:3000
+
+### All menus from one restaurant
+GET http://localhost:3000/restaurants/c4be1c66-e622-11ee-b8d1-4cebbd0150a9/menus
+Origin: http://localhost:3000
+
+### One menu from one restaurant
+GET http://localhost:3000/restaurants/c4be1c66-e622-11ee-b8d1-4cebbd0150a9/menus/c4bf0895-e622-11ee-b8d1-4cebbd0150a9
+Origin: http://localhost:3000
+
+### All menus from all restaurants
+GET http://localhost:3000/menus
+Origin: http://localhost:3000
+
+### Create restaurant
+POST http://localhost:3000/restaurants
+Content-Type: application/json
+Origin: http://localhost:3000
+
+{
+  "name": "Café Neruda (diagonal)",
+  "description": "Especialista en café",
+  "phone": "+56212666678",
+  "openTime": "13:00:00",
+  "closeTime": "3:00:00",
+  "rate": 9.9
+}
+
+### Patch restaurant by id
+PATCH http://localhost:3000/restaurants/f8df523d-e6dc-11ee-acb6-4cebbd0150a9
+Content-Type: application/json
+Origin: http://localhost:3000
+
+{
+  "openTime": "10:00:00",
+  "closeTime": "2:00:00"
+}
+
+### Create one menu to specific restaurant
+POST http://localhost:3000/restaurants/c4be1c66-e622-11ee-b8d1-4cebbd0150a9/menus
+Content-Type: application/json
+Origin: http://localhost:3000
+
+{
+  "name": "menú de día domingo",
+  "description": "para relajarse un día domingo",
+  "dishes": [
+   {
+      "name": "Ensalada de Quínoa y Palta",
+      "price": 5500
+    }
+  ]
+}
+

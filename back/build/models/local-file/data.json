@@ -1,0 +1,29 @@
+[
+    {
+        "name": "El Parrón Chileno",
+        "description": "Especialidades en comida típica chilena",
+        "phone": "+56212345678",
+        "open_time": "12:00:00",
+        "close_time": "22:00:00",
+        "rate": "4.3",
+        "id": "dd590fcf-e5a6-11ee-8b05-4cebbd0150a9"
+    },
+    {
+        "name": "Sabores de Chile",
+        "description": "Experiencia gastronómica gourmet con ingredientes chilenos",
+        "phone": "+56 2 8765 4321",
+        "open_time": "11:00:00",
+        "close_time": "23:00:00",
+        "rate": "6.6",
+        "id": "dd591697-e5a6-11ee-8b05-4cebbd0150a9"
+    },
+    {
+        "name": "Mariscos del Pacífico",
+        "description": "Especialidades en mariscos frescos del Océano Pacífico",
+        "phone": "+56 2 3456 7890",
+        "open_time": "10:00:00",
+        "close_time": "21:00:00",
+        "rate": "8.1",
+        "id": "dd591957-e5a6-11ee-8b05-4cebbd0150a9"
+    }
+]
