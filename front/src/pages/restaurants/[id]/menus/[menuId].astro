@@ -1,0 +1,27 @@
+---
+import Layout from '../../../../layouts/Layout.astro'
+import CardMenus from "../../../../components/CardMenus.astro"
+import { getMenuByRestaurantIdAndMenuId } from '../../../../services/api'
+import { type Menu } from '../../../../types/api'
+
+const { id: restaurantId, menuId } = Astro.params
+
+let menu: Menu
+
+if (restaurantId && menuId) {
+	menu = await getMenuByRestaurantIdAndMenuId({ restaurantId, menuId })
+}
+---
+
+<Layout title="Menus by id">
+	<div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+		{
+			<CardMenus
+				id = { menu.id }
+				name = { menu.name }
+				description = { menu.description }
+				dishes = { menu.dishes }
+			/>
+		}
+	</div>
+</Layout>

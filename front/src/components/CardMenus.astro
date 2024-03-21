@@ -1,13 +1,14 @@
 ---
-import { type Menu } from "../types/api"
+import { type Dish } from "../types/api"
 
 interface Props {
-  name: string
-  menus: Menu[]
   id: string
+  name: string
+  description: string
+  dishes: Dish[]
 }
 
-const { name, menus, id } = Astro.props
+const { id, name, description, dishes } = Astro.props
 ---
 
 <article class = "rounded-log border shadow-md bg-gray-800 border-gray-700
@@ -18,19 +19,16 @@ const { name, menus, id } = Astro.props
       {name}
     </h2>
 
-    {
-      menus.map(menu =>
-        <h3 class="mb-4 font-bold text-gray-400">
-          { menu.name }
-        </h3>
-        <div>{ menu.dishes.map(dish => 
-          <p class="mb-4 font-light">
-            <span class="font-bold">Plato:</span>
-            <span>{dish.name} - ${dish.price}</span>
-          </p>
-          )}
-        </div>
-      )
-    }
+    <h3 class="mb-4 font-light text-gray-400">
+      {description}
+    </h3>
+
+    <div>{ dishes.map(dish => 
+      <p class="mb-4 font-light">
+        <span class="font-bold">Plato:</span>
+        <span>{dish.name} - ${dish.price}</span>
+      </p>
+      )}
+    </div>
   </header>
 </article>

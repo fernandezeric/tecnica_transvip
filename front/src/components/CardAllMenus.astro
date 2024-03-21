@@ -1,0 +1,35 @@
+---
+import { type Menu } from "../types/api"
+
+interface Props {
+  name: string
+  menus: Menu[]
+  id: string
+}
+
+const { name, menus, id } = Astro.props
+---
+
+<article class = "rounded-log border shadow-md bg-gray-800 border-gray-700
+  hover:scale-105 hover:bg-gray-700 hover:border-gray-500 transition flex flex-col"
+>
+  <header class="p-4 flex-grow">
+    <h2 class="my-2 text-2xl font-bold trancking-tight text-white">
+      {name}
+    </h2>
+    {
+      menus.map(menu =>
+        <h3 class="mb-4 font-bold text-gray-400">
+          { menu.name }
+        </h3>
+        <div>{ menu.dishes.map(dish => 
+          <p class="mb-4 font-light">
+            <span class="font-bold">Plato:</span>
+            <span>{dish.name} - ${dish.price}</span>
+          </p>
+          )}
+        </div>
+      )
+    }
+  </header>
+</article>

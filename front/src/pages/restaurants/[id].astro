@@ -1,10 +1,19 @@
 ---
-import { getRestaurantById } from "../../services/api"
+import { getAllMenusByRestaurantId, getRestaurantById } from "../../services/api"
 import Layout from '../../layouts/Layout.astro'
 import CardRestaurant from "../../components/CardRestaurant.astro"
+import CardMenuSmall from "../../components/CardMenuSmall.astro"
+import { type RestaurantWithoutMenu, type Menu } from "../../types/api"
 
 const { id } = Astro.params
-const restaurant = await getRestaurantById({ id })
+
+let restaurant: RestaurantWithoutMenu
+let menus: Menu[]
+
+if(id) {
+  restaurant = await getRestaurantById({ id })
+  menus = await getAllMenusByRestaurantId({ id })
+}
 ---
 
 <Layout title="Restaurant by id">
@@ -18,5 +27,17 @@ const restaurant = await getRestaurantById({ id })
     closeTime = { restaurant.closeTime }
     rate = { restaurant.rate }
   />
+  </div>
+  <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 pt-10">
+    {
+      menus.map(menu =>
+        <CardMenuSmall
+          restaurantId = { restaurant.id }
+          name = { menu.name }
+          description = { menu.description }
+          menuId = { menu.id }
+        />
+      )
+    }
   </div>
 </Layout>

@@ -1,11 +1,81 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import RestaurantsSmallComponent from "../components/RestaurantsSmall.astro"
+import { createRestaurant } from "../services/api"
+
+/**
+  {
+    "name": "Café Neruda (diagonal)",
+    "description": "Especialista en café",
+    "phone": "+56212666678",
+    "openTime": "13:00:00",
+    "closeTime": "3:00:00",
+    "rate": 9.9
+  }
+ */
+if (Astro.request.method === "POST") {
+  try {
+    const data = await Astro.request.formData()
+    const name = data.get("name")
+    const description = data.get("description")
+    const phone = data.get("phone")
+		const openTime = data.get("openTime")
+		const closeTime = data.get("closeTime")
+		const rate = data.get("rate")
+
+		const dataToSend = {
+			name,
+			description,
+			phone,
+			openTime,
+			closeTime,
+			rate: Number(rate)
+		}
+
+		await createRestaurant({ data: dataToSend })
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error(error.message);
+    }
+  }
+}
+
 ---
 
 <Layout title="Front tecnica Transvip">
-	<h3 class="mb-4 text-5xl tracking-tight font-extrabold text-white">
+	<h3 class="pt-4 pb-4 mb-4 text-5xl tracking-tight font-extrabold text-white">
 		Restoranes
 	</h3>
 	<RestaurantsSmallComponent/>
+	<h3 class="pt-4 pb-4 mb-4 text-5xl tracking-tight font-extrabold text-white">
+		Crear Restoranes
+	</h3>
+	<form class="w-auto rounded-log border shadow-md bg-gray-800 border-gray-700 hover:border-gray-500 transition flex flex-col" method="POST">
+		<label class="pb-2 pt-2 m-4 text-xl tracking-tight font-extrabold text-white">
+			Nombre: 
+			<input type="text" name="name" required />
+		</label>
+		<label class="pb-2 pt-2 m-4 text-xl tracking-tight font-extrabold text-white">
+			Descripción: 
+			<input type="text" name="description" required />
+		</label>
+		<label class="pb-2 pt-2 m-4 text-xl tracking-tight font-extrabold text-white">
+			Teléfono: 
+			<input type="text" name="phone" required minlength="9" />
+		</label>
+		<label class="pb-2 pt-2 m-4 text-xl tracking-tight font-extrabold text-white">
+			Apertura: 
+			<input type="text" name="openTime" required/>
+		</label>
+		<label class="pb-2 pt-2 m-4 text-xl tracking-tight font-extrabold text-white">
+			Cierre: 
+			<input type="text" name="closeTime" required/>
+		</label>
+		<label class="pb-2 pt-2 m-4 text-xl tracking-tight font-extrabold text-white">
+			Rate: 
+			<input type="number" name="rate" required maxlength="3" />
+		</label>
+		<button class=" flex-row justify-center text-white cursor-pointer hover:bg-slate-600 focus:ring-4 focus:outline-none focus:ring-[#1da1f2]/50 font-medium rounded-lg px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#1da1f2]/55 mr-2 mb-2 hover:shadow-lg transition-all duration-200 ease-in-out scale-90 gap-x-2 opacity-90 hover:opacity-100"
+		>Enviar</button>
+	</form>
 </Layout>
