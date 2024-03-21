@@ -1,5 +1,5 @@
 ---
-import CardRestaurantsHome from "../components/CardRestaurantsHome.astro"
+import CardRestaurantsSmall from "./CardRestaurantsSmall.astro"
 import { getAllRestaurants } from "../services/api"
 
 const restaurants = await getAllRestaurants()
@@ -8,7 +8,7 @@ const restaurants = await getAllRestaurants()
 <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
   {
     restaurants.map(restaurant =>
-      <CardRestaurantsHome
+      <CardRestaurantsSmall
         id = { restaurant.id }
         name = { restaurant.name }
         description = { restaurants.description }
