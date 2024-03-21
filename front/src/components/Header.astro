@@ -1,0 +1,32 @@
+---
+import HeaderButton from "./HeaderButton.astro"
+import KitchenSVG from "../svgs/kitchen.astro"
+import RestaurantSVG from "../svgs/restaurant.astro"
+import MenuSVG from "../svgs/menu.astro"
+---
+
+<header class="py-8 px4 mx-auto max-w-xl lg:py-16 lg:px6">
+  <div class="mx-auto text-center mb-8 lg:mb-16">
+    <h2 class="mb-4 text-5xl tracking-tight font-extrabold text-white">
+      El mejor Front 🚀
+    </h2>
+    <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">
+      Simple front para consultar restoranes y sus respectivos menús
+    </p>
+  </div>
+
+  <nav class="flex flex-col items-center justify-between w-full text-center md:flex-row">
+    <HeaderButton href="/">
+      <KitchenSVG slot="after"/>
+      Home
+    </HeaderButton>
+    <HeaderButton href="/restaurants"> 
+      <RestaurantSVG slot="after"/>
+      Restoranes (todos)
+    </HeaderButton>
+    <HeaderButton href="/menus"> 
+      <MenuSVG slot="after"/>
+      Menús (todos)
+    </HeaderButton>
+  </nav>
+</header>

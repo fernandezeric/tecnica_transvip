@@ -1,0 +1,18 @@
+---
+import CardMenus from "../components/CardMenus.astro"
+import { getAllMenus } from "../services/api"
+
+const menusRestaurants = await getAllMenus()
+---
+
+<div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+  {
+    menusRestaurants.map(menuRestaurant =>
+      <CardMenus
+        id = { menuRestaurant.id }
+        name = { menuRestaurant.name }
+        menus = { menuRestaurant.menus }
+      />
+    )
+  }
+</div>

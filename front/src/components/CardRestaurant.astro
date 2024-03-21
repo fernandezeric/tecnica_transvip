@@ -1,0 +1,46 @@
+---
+interface Props {
+  name: string
+  description: string
+  phone: string
+  openTime: Date
+  closeTime: Date
+  rate: number
+  id: string
+}
+
+const { name, description, phone, openTime, closeTime, rate, id } = Astro.props
+---
+
+<a
+  href=`/restaurants/${id}/menus`
+  class = "rounded-log border shadow-md bg-gray-800 border-gray-700
+  hover:scale-105 hover:bg-gray-700 hover:border-gray-500 transition flex flex-col"
+>
+  <header class="p-4 flex-grow">
+    <h2 class="my-2 text-2xl font-bold trancking-tight text-white">
+      {name}
+    </h2>
+    
+    <h3 class="mb-4 font-light text-gray-400">
+      {description}
+    </h3>
+
+    <p class="mb-4 font-light">
+      <span class="font-bold">Teléfono:</span>
+      <span>{ phone }</span>
+    </p>
+    <p class="mb-4 font-light">
+      <span class="font-bold">Apertura:</span>
+      <span>{ openTime } hrs</span>
+    </p>
+    <p class="mb-4 font-light">
+      <span class="font-bold">Cierre:</span>
+      <span>{ closeTime } hrs</span>
+    </p>
+    <p class="mb-4 font-light">
+      <span class="font-bold">Puntuación:</span>
+      <span>{ rate }</span>
+    </p>
+  </header>
+</a>

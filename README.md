@@ -322,7 +322,7 @@ GET http://localhost:3000/menus
         "id": "c4bf0123-e622-11ee-b8d1-4cebbd0150a9",
         "name": "Menú Tradicional",
         "description": "Platos clásicos de la gastronomía chilena",
-        "dashes": [
+        "dishes": [
           {
             "name": "Empanadas de Pino",
             "price": 2500
@@ -341,7 +341,7 @@ GET http://localhost:3000/menus
         "id": "c4bf0605-e622-11ee-b8d1-4cebbd0150a9",
         "name": "Menú de Parrilladas",
         "description": "Selección de carnes a la parrilla con acompañamientos chilenos",
-        "dashes": [
+        "dishes": [
           {
             "name": "Asado de Tira",
             "price": 6000
@@ -366,7 +366,7 @@ GET http://localhost:3000/menus
         "id": "554b8cc9-e626-11ee-b8d1-4cebbd0150a9",
         "name": "menú de día viernes",
         "description": "para relajarse un día viernes",
-        "dashes": [
+        "dishes": [
           {
             "name": "plato 1 espectacular",
             "price": 3000
@@ -381,7 +381,7 @@ GET http://localhost:3000/menus
         "id": "5fccc40d-e626-11ee-b8d1-4cebbd0150a9",
         "name": "menú de día viernes",
         "description": "para relajarse un día viernes",
-        "dashes": [
+        "dishes": [
           {
             "name": "plato 1 espectacular",
             "price": 3000
@@ -396,7 +396,7 @@ GET http://localhost:3000/menus
         "id": "c4bf0895-e622-11ee-b8d1-4cebbd0150a9",
         "name": "Menú de Mariscos Frescos",
         "description": "Selección diaria de mariscos frescos del Pacífico",
-        "dashes": [
+        "dishes": [
           {
             "name": "Ensalada de Quínoa y Palta",
             "price": 5500
@@ -415,7 +415,7 @@ GET http://localhost:3000/menus
         "id": "c4bf0924-e622-11ee-b8d1-4cebbd0150a9",
         "name": "Menú del Chef",
         "description": "Platos especiales creados por nuestro chef con productos del mar chileno",
-        "dashes": [
+        "dishes": [
           {
             "name": "Paila Marina",
             "price": 8500
@@ -440,7 +440,7 @@ GET http://localhost:3000/menus
         "id": "c4bf0765-e622-11ee-b8d1-4cebbd0150a9",
         "name": "Menú Degustación",
         "description": "Experiencia gastronómica exclusiva con sabores chilenos",
-        "dashes": [
+        "dishes": [
           {
             "name": "Camarones al Ajillo",
             "price": 9500
@@ -459,7 +459,7 @@ GET http://localhost:3000/menus
         "id": "c4bf0805-e622-11ee-b8d1-4cebbd0150a9",
         "name": "Menú de Temporada",
         "description": "Platos gourmet elaborados con ingredientes frescos de temporada",
-        "dashes": [
+        "dishes": [
           {
             "name": "Ceviche de Reineta",
             "price": 7000
@@ -565,9 +565,7 @@ POST http://localhost:3000/restaurants/:id/menus
 
 ## Cliente
 
-La idea hubiera sido que el clientes fuera un repositorio dijerentes.
-
-Independiente de lo anterior para ejecutar el cliente.
+En en cliente astro, porque astro? porque lo vi como oportunidad de aprender. Igualmente pnpm.
 
 ```
 ```

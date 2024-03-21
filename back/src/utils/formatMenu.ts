@@ -42,7 +42,7 @@ export const formatMenuRestaurant = (menuDB: MenuWithRestaurantDB[]): MenuWithRe
           id: item.menu_id,
           name: item.menu_name,
           description: item.menu_description,
-          dashes: [{
+          dishes: [{
             name: item.dish_name,
             price: item.dish_price
           }]
@@ -56,13 +56,13 @@ export const formatMenuRestaurant = (menuDB: MenuWithRestaurantDB[]): MenuWithRe
           id: item.menu_id,
           name: item.menu_name,
           description: item.menu_description,
-          dashes: [{
+          dishes: [{
             name: item.dish_name,
             price: item.dish_price
           }]
         })
       } else {
-        acc[existingRestaurantIndex].menus[existingMenuIndex].dashes.push({
+        acc[existingRestaurantIndex].menus[existingMenuIndex].dishes.push({
           name: item.dish_name,
           price: item.dish_price
         })
