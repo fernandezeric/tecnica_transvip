@@ -37,7 +37,7 @@ tablas que relacionen **Restaurant con sus respectivos Menus**, y los **Menus co
 En cualquier caso, tener las tres entidades definidas y separas deja preparado al backend para más posibilidades.
 Por ejemplo adaptarlo para un único restaurant o para una adminsitración de varios.
 
-![Imagen entidades de la api rest](entidadesApi.png)
+![Imagen entidades de la api rest](/imgs/entidadesApi.png)
 
 **[⬆ vuelve hasta arriba](#contenido)**
 
@@ -79,7 +79,7 @@ Las librerías de dependencia son para tipos de typescript y un linter.
 El script de la base de datos populanda esta en **src/db/restaurantsdb.sql**
 
 #### Esquema de mysql
-![Imagen Diagrama de relación de mysql](sqlDriagram.png)
+![Imagen Diagrama de relación de mysql](/imgs/sqlDriagram.png)
 
 Al recuperar datos de las tablas de mysql, son un poco diferentes por ejemplo.
 
@@ -146,7 +146,7 @@ service mongod start
 
 ### Endpoints
 
-![Imagen Bosquejo de los endpoints](endpoints.png)
+![Imagen Bosquejo de los endpoints](/imgs/endpoints.png)
 
 Las siguientes consultas están en **./api.http**, en vsc una extensión util es REST Client, permite probar de forma rápida.
 
@@ -198,8 +198,8 @@ GET http://localhost:3000/restaurants/:id
   "name": "Mariscos del Pacífico",
   "description": "Especialidades en mariscos frescos del Océano Pacífico",
   "phone": "+56 2 3456 7890",
-  "open_time": "10:00:00",
-  "close_time": "21:00:00",
+  "openTime": "10:00:00",
+  "closeTime": "21:00:00",
   "rate": "8.1",
   "id": "c4be1c66-e622-11ee-b8d1-4cebbd0150a9"
 }
@@ -499,8 +499,8 @@ POST http://localhost:3000/restaurants
   "name": "Café Neruda (diagonal)",
   "description": "Especialista en café",
   "phone": "+56212666678",
-  "open_time": "13:00:00",
-  "close_time": "03:00:00",
+  "openTime": "13:00:00",
+  "closeTime": "03:00:00",
   "rate": "9.9",
   "id": "f8df523d-e6dc-11ee-acb6-4cebbd0150a9"
 }
@@ -522,8 +522,8 @@ PATCH http://localhost:3000/restaurants/:id
   "name": "Café Neruda (diagonal)",
   "description": "Especialista en café",
   "phone": "+56212666678",
-  "open_time": "10:00:00",
-  "close_time": "02:00:00",
+  "opeTime": "10:00:00",
+  "closeTime": "02:00:00",
   "rate": "9.9",
   "id": "f8df523d-e6dc-11ee-acb6-4cebbd0150a9"
 }
@@ -565,10 +565,20 @@ POST http://localhost:3000/restaurants/:id/menus
 
 ## Cliente
 
-En en cliente astro, porque astro? porque lo vi como oportunidad de aprender. Igualmente pnpm.
+```
+// dentro del cliente
+npm run dev
+```
 
-```
-```
+Explicación con capturas (el diseño es mi pasión)
+
+
+![Imagen Dashboard principal](/imgs/dashboard.png)
+![Imagen Restaurant por Id](/imgs/restaurantById.png)
+![Imagen Menu de un restaurant especifico](/imgs/menuId.png)
+![Imagen Todos los restaurants](/imgs/allRestaurants.png)
+![Imagen Todos los menus](/imgs/allMenus.png)
+
 
 **[⬆ vuelve hasta arriba](#contenido)**
 
@@ -576,13 +586,12 @@ En en cliente astro, porque astro? porque lo vi como oportunidad de aprender. Ig
 
 1. añadir path para restaurant/menu ?.
 2. docker.
-3. front.
 4. arreglar este readme.
 5. ver donde queda mejor la conexión a mysql.
 6. terminar de arreglar tipos.
-7. crear build y ver si montar todo.
+7. crear build y ver si montar todo en algún sitio.
 8. documentar bonito.
-9. test <3
-10. shorcut '@' para las importaciones
+9. test <3.
+10. shorcut '@' para las importaciones.
 
 **[⬆ vuelve hasta arriba](#contenido)**
