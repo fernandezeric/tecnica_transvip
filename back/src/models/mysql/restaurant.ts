@@ -13,7 +13,7 @@ const getAll = async (): Promise<RestaurantWithoutMenu[]> => {
 
 const getById = async ({ id }: { id: string }): Promise<RestaurantWithoutMenu> => {
   const [resultQuery] = await connectionDB.query(
-    `SELECT name, description, phone, open_time, close_time, rate, BIN_TO_UUID(id) id 
+    `SELECT name, description, phone, open_time AS openTime, close_time AS closeTime, rate, BIN_TO_UUID(id) id 
       FROM restaurant
       WHERE id = UUID_TO_BIN(?);`,
     [id]

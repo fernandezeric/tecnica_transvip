@@ -3,7 +3,8 @@ import cors from 'cors'
 
 const ACCEPTED_ORIGINS = [
   'http://localhost:8080',
-  'http://localhost:3000'
+  'http://localhost:3000',
+  'http://localhost:4321'
 ]
 
 interface CorsMiddlewareOptions {
@@ -13,6 +14,7 @@ interface CorsMiddlewareOptions {
 export const corsMiddleware = ({ acceptedOrigins = ACCEPTED_ORIGINS }: CorsMiddlewareOptions = {}): RequestHandler => {
   return cors({
     origin: (origin, callback) => {
+      console.log(origin)
       if (origin !== undefined && acceptedOrigins.includes(origin)) {
         return callback(null, true)
       }

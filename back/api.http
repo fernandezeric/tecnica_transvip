@@ -11,7 +11,7 @@ GET http://localhost:3000/restaurants/c4be1c66-e622-11ee-b8d1-4cebbd0150a9
 Origin: http://localhost:3000
 
 ### All menus from one restaurant
-GET http://localhost:3000/restaurants/c4be1c66-e622-11ee-b8d1-4cebbd0150a9/menus
+GET http://localhost:3000/restaurants/285ce6e9-e643-11ee-b8d1-4cebbd0150a9/menus
 Origin: http://localhost:3000
 
 ### One menu from one restaurant
